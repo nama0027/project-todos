@@ -50,7 +50,6 @@ const Wrapper = styled.div`
 
 const TodoList = ({ date }) => {
   const [showAddTask, setShowAddTask] = useState('hide');
-  const [isOpen, setIsOpen] = useState(false);
 
   const items = useSelector((store) =>
     store.todos.items.filter(
@@ -68,9 +67,6 @@ const TodoList = ({ date }) => {
     dispatch(todos.actions.deleteTodo(id));
   };
 
-  const toggleModal = () => {
-    setIsOpen(!isOpen);
-  };
   return (
     <section>
       {items.map((item) => (

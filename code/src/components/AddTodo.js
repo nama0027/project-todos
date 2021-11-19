@@ -72,9 +72,7 @@ const AddTodo = ({ setShowAddTask }) => {
   const toggleLabel = () => setIsLabelOpen(!isLabelOpen);
 
   const onSetPriority = () => {
-    {
-      priority === 0 ? setPriority(1) : setPriority(0);
-    }
+    priority === 0 ? setPriority(1) : setPriority(0);
   };
 
   const onAddTodo = () => {
