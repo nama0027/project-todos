@@ -143,7 +143,7 @@ export const AddTodo = ({ handelTaskInput, taskInputType, selectedTaskID }) => {
             />
             <PropertiesContainer>
               <DatePicker
-                defaultValue={selectedTask.dueDate}
+                selected={selectedDate}
                 value={selectedTask.dueDate}
                 onChange={(date) => setUpdatedDate(date)}
                 customInput={<Button />}

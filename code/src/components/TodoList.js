@@ -61,7 +61,9 @@ const TodoList = ({ date }) => {
   const dispatch = useDispatch();
 
   //*.............redux store based variables declaration .................*//
-  const items = useSelector((store) => store.todos.items);
+  const items = useSelector((store) =>
+    store.todos.items.filter((item) => item.dueDate === date)
+  );
 
   //*---------Locally defined States-------------------*//
   const [showUpdateTask, setShowUpdateTask] = useState('hide');
