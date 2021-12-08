@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import todos from '../reducers/todos';
 import { ReactComponent as Plus } from '../assets/plus-24.svg';
 
@@ -9,6 +9,7 @@ const DropDownContainer = styled.div`
   top: 2em;
   width: 12em;
   margin: 0 auto;
+  margin-left: ${({ type }) => (type === 'label' ? '-175px' : '-180px')};
 `;
 
 const TextContainer = styled.span`
@@ -57,7 +58,7 @@ const Dropdown = ({ input, setInput }) => {
 
   if (input === 'label') {
     return (
-      <DropDownContainer>
+      <DropDownContainer type={input}>
         <DropDownList>
           <ListItem>
             <TextContainer>
@@ -71,7 +72,7 @@ const Dropdown = ({ input, setInput }) => {
             </TextContainer>
           </ListItem>
           {label.map((item, index) => (
-            <ListItem key={item} value={item} onClick={() =>setInput(index)}>
+            <ListItem key={item} value={item} onClick={() => setInput(index)}>
               {item}
             </ListItem>
           ))}
@@ -80,7 +81,7 @@ const Dropdown = ({ input, setInput }) => {
     );
   } else {
     return (
-      <DropDownContainer>
+      <DropDownContainer type={input}>
         <DropDownList>
           <ListItem>
             <TextContainer>
