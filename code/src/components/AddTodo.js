@@ -20,8 +20,6 @@ export const AddTodo = ({ handelTaskInput, taskInputType, selectedTaskID }) => {
   const selectedTask = useSelector((store) =>
     store.todos.items.find((item) => item.id === selectedTaskID)
   );
-  console.log(selectedTaskID);
-  console.log(selectedTask);
 
   const [input, setInput] = useState('');
   const [selectedDate, setSelectedDate] = useState(new Date());
@@ -32,7 +30,7 @@ export const AddTodo = ({ handelTaskInput, taskInputType, selectedTaskID }) => {
   const [projectIndex, setProjectIndex] = useState(-1);
 
   const [updatedInput, setUpdatedInput] = useState('');
-  const [updatedDate, setUpdatedDate] = useState('');
+  const [updatedDate, setUpdatedDate] = useState(new Date());
 
   const onToggleProject = () => {
     isLabelOpen && setIsLabelOpen(!isLabelOpen);
@@ -63,7 +61,6 @@ export const AddTodo = ({ handelTaskInput, taskInputType, selectedTaskID }) => {
   };
 
   const onUpdateTodo = () => {
-    console.log('i am in update');
     dispatch(
       todos.actions.updateTodo({
         id: selectedTask.id,
@@ -125,7 +122,7 @@ export const AddTodo = ({ handelTaskInput, taskInputType, selectedTaskID }) => {
           </PropertiesContainer>
         </Container>
         <ButtonContainer>
-          <Button onClick={onAddTodo} value="Add task" />
+          <Button onClick={onAddTodo} value="Add Task" />
           <Button onClick={onCancel} value="Cancel" />
         </ButtonContainer>
       </>
@@ -143,7 +140,7 @@ export const AddTodo = ({ handelTaskInput, taskInputType, selectedTaskID }) => {
             />
             <PropertiesContainer>
               <DatePicker
-                selected={selectedDate}
+                selected={updatedDate}
                 value={selectedTask.dueDate}
                 onChange={(date) => setUpdatedDate(date)}
                 customInput={<Button />}
@@ -209,13 +206,13 @@ const UpdateContainer = styled.div`
 `;
 
 const Container = styled.div`
-  border: 1px solid #afd0dc;
+  border: 1px solid #29b07e;
   margin: 0.5em 0;
-  padding: 0.75em;
+  padding: 0.25em 0.5em;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 90%;
+  width: 100%;
 `;
 
 const ButtonContainer = styled.div`
@@ -226,6 +223,7 @@ const ButtonContainer = styled.div`
 `;
 const PropertiesContainer = styled.div`
   margin-top: 2em;
+  padding: 0;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -235,27 +233,27 @@ const ProjectContainer = styled.div`
   display: flex;
   flex-direction: column;
   position: absolute;
-  right: 7rem;
+  right: 5rem;
   margin: 0;
   padding: 0;
   @media (min-width: 768px) {
-    right: 11rem;
+    right: 6rem;
   }
   @media (min-width: 1024px) {
-    right: 11rem;
+    right: 6rem;
   }
 `;
 const LabelContainer = styled.div`
   display: flex;
   flex-direction: column;
   position: absolute;
-  right: 5rem;
+  right: 3rem;
   margin: 0;
   @media (min-width: 768px) {
-    right: 8.5rem;
+    right: 3.75rem;
   }
   @media (min-width: 1024px) {
-    right: 9.25rem;
+    right: 4.25rem;
   }
 `;
 const InputText = styled.input`

@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import moment from 'moment';
 
 const StyledButton = styled.button`
-  background: #0b79a2;
+  background: #2ab169;
   border-radius: 3px;
-  border: 2px solid #afd0dc;
+  border: 2px solid #2ab169;
   padding: 0.4em;
   color: #fff;
   width: fit-content;

@@ -12,7 +12,7 @@ import { ReactComponent as Plus } from '../assets/plus-24.svg';
 const Header = styled.header`
   width: 100%;
   height: 50px;
-  background-color: #0b79a2;
+  background-color: #29b07e;
   padding: 0.75em 0 0.25em 0.75em;
 `;
 const TaskListBanner = styled.section`
@@ -23,19 +23,20 @@ const TaskListBanner = styled.section`
   gap: 10px;
   margin: 0;
   padding: 0.5rem;
-  background: #333;
+  background: #eaf8f2;
 `;
 
 const MainContent = styled.section`
-  max-width: 800px;
+  max-width: 375px;
   margin: 10px auto;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
   position: relative;
 
   @media (min-width: 768px) {
-    padding-left: 55px;
-    padding-right: 55px;
+    max-width: 800px;
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 `;
 const AddTaskButton = styled.button`
@@ -48,11 +49,11 @@ const AddTaskButton = styled.button`
   padding: 0;
   border: none;
   background: transparent;
-  color: #0b79a2;
+  color: #58c39d;
 `;
 
 const Title = styled.h2`
-  color: white;
+  color: #333;
 `;
 
 const Start = () => {

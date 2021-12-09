@@ -61,10 +61,8 @@ const todos = createSlice({
     },
 
     updateTodo: (store, action) => {
-      console.log('i am in reducer');
       const { id, taskText, dueDate, priority, labelIndex, projectIndex } =
         action.payload;
-      console.log('i am in reducer', id);
       const updatedItems = store.items.map((item) => {
         if (item.id === id) {
           const updatedTodo = {
